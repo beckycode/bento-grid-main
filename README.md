@@ -40,7 +40,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - CSS Grid
-- Desktop-first workflow
+- Mobile-first workflow
 
 ### What I learned
 
@@ -52,6 +52,8 @@ CSS Grid definitely offers many advantages, and once you learn it, you start thi
 - Working with template columns/rows and span.
 
 In this project I used the last solution just to practice. I think with template areas would be definitely better but it helped me to understand the different approaches to get the same result. Good experiment.
+
+I started with desktop-first-workflow and then I switched to mobile-first-workflow and and media queries for desktop. Good exercise
 
 ### Continued development
 
