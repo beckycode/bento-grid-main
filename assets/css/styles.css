@@ -19,15 +19,14 @@
 
 body{
   min-height: 100vh;
+  max-width: 100vw;
   color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--body-background);
   font-size: 18px;
-
 }
-
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'DM Sans';
@@ -36,16 +35,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font-weight: 500;
   font-size: 50px;
   line-height: 45px;
+}
 
-}
 h2 {
-  font-size: 30px;
+  font-size: 30px; 
 }
+
 h3 {
   font-size: 24px;
+
 }
 
 p{
@@ -57,15 +57,27 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
   border-radius: 10px;
   overflow: hidden;
+  margin: 15px;
+  max-width: 100%;
+  padding: 15px;
+  @media  (min-width: 1024px) {
+   padding: 15px;
+    margin: 0;
+    align-items: center;
+
+  }
 }
 
+
 img {
-  width: 100%;
-  height: auto;
+  width: inherit;
+
+  @media  (min-width: 1024px) {
+    width: 100%;
+    height: auto;
+   }
 }
 
 .accent--purple {
@@ -77,76 +89,120 @@ img {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4,minmax(180px,1fr)) ;
-  grid-template-rows: repeat(10,minmax(45px,1fr));
-  gap: 1.4rem;
-  width: 60vw;
-  margin: 50px auto;
-  max-height: 70vh;
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
+  grid-template-rows: repeat(8, minmax(80px, 300px)) dense;
+ 
+  @media  (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(180px,1fr)) ;
+    grid-template-rows: repeat(10,minmax(45px,1fr));
+    gap: 1.4rem;
+    width: 60vw;
+    margin: 50px auto;
+    min-height: 70vh;
+    max-height: 70vh;
+  }
 }
 
 .card-1{
   background-color: var(--yellow-100);
-  grid-row: 1/6;
-  grid-column: 1/2;
+ align-items: center;
   justify-content: center;
+  order: 6;
+  @media  (min-width: 1024px) {
+    grid-row: 1/6;
+    grid-column: 1/2;
+  }
+
 }
 
 .card-2{
+  order: 0;
   background-color: var(--purple-500);
   color: var(--white);
-  grid-column: 2/4;
-  grid-row: 1/5;
+  padding: 30px;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+  @media  (min-width: 1024px) {
+    grid-column: 2/4;
+    grid-row: 1/5;
+    justify-content: flex-start;
+
+  }
 }
 
 .card-3{
   background-color: var(--purple-100);
-  grid-row: 1/8;
-  grid-column: 4/5;
+  order: 3;
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 30px;
   line-height: 10px;
-
+  @media  (min-width: 1024px) {
+    grid-row: 1/8;
+    grid-column: 4/5;
+    padding-left: 30px;
+  }
 }
 .card-4{
-  grid-row: 6/11;
-  grid-column: 1/2;
+  order: 7;
+  
   background-color: var(--yellow-500);
   justify-content: space-between;
+  @media  (min-width: 1024px) {
+    grid-row: 6/11;
+  grid-column: 1/2;
+  }
 }
 .card-5{
   background-color: var(--white);
-  grid-column: 2/3;
-  grid-row: 5/8;
+  order: 1;
   line-height: 10px;
-  justify-content: space-evenly;
+  @media  (min-width: 1024px) {
+    justify-content: space-evenly;
+    grid-column: 2/3;
+  grid-row: 5/8;
+  }
 }
 .card-6{
   background-color: var(--yellow-500);
-  grid-column: 3/4;
-  grid-row: 5/8;
+  order: 2;
+  overflow: hidden;
+  padding-bottom: 0;
+  @media  (min-width: 1024px) {
+    grid-column: 3/4;
+    grid-row: 5/8;
+  }
 
 }
 .card-7{
-  grid-area: card-7;
   background-color: var(--white);
-  grid-column: 2/3;
-  grid-row: 8/11;
+  order: 5;
+ 
   justify-content: center;
   align-items: flex-start;
-  padding-top: 30px;
+  padding: 30px 20px 10px 15px;
+  @media  (min-width: 1024px) {
+    grid-column: 2/3;
+    grid-row: 8/11;
+  }
 }
 .card-8{
   background-color: var(--purple-500);
-  grid-column: 3/-1;
-  grid-row: 8/11;
+  flex-direction: column;
+  order: 4;
   color: var(--white);
-  flex-direction: row;
-  justify-content: space-evenly;
+  align-items: center;
+  
+  @media  (min-width: 1024px) {
+    grid-column: 3/-1;
+    grid-row: 8/11;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .attribution {
@@ -162,9 +218,17 @@ img {
 
 .card-1--illustration {
   width: 80%;
+  @media  (min-width: 1024px) {
+    width: 100%;
+  }
 }
 .card-2--illustration {
-  width: 35%;
+  width: 80%;
+  text-align: center;
+
+  @media  (min-width: 1024px) {
+    width: 35%;
+  }
 }
 
 .card-2--title {
@@ -176,19 +240,34 @@ img {
 }
 
 .card-3--illustration {
-  width: 150%;
   align-self: flex-start;
   margin-bottom: 20px;
+  width: 100%;
+
+  @media  (min-width: 1024px) {
+    width: 150%;
+  }
 }
+  
+
 .card-4--illustration {
-  align-self: flex-end;
+  width: 80%;
+  margin-top: 20px;
+  @media  (min-width: 1024px) {
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 0;
+  }
 }
 
 
 .card-5--illustration {
-  width: 148%;
   align-self: flex-start;
   margin-bottom: 10px;
+  width: 100%;
+  @media  (min-width: 1024px) {
+    width: 148%;
+  }
 }
 .card-5--title,
 .card-6--title,
@@ -197,12 +276,37 @@ img {
   line-height: 22px;
 }
 
+.card-5--title{
+  @media  (min-width: 1024px) {
+    letter-spacing: -1px;
+  }
+}
+
+.card-3--title{
+  padding: 12px 12px 0 ;
+
+  @media  (min-width: 1024px) {
+    padding: 0  ;
+  }
+}
+
 .card-3--text {
+  padding: 0 20px;
   line-height: 18px;
+  @media  (min-width: 1024px) {
+    padding: 0 ;
+  }
 }
 
 .card-6--illustration {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  width: 90%;
+  overflow: hidden;
+
+  @media  (min-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .card-7--title {
@@ -218,12 +322,26 @@ img {
 .card-7--illustration {
   width: 70%;
   margin-bottom: 10px;
+  
 }
 
 .card-8--illustration {
-  padding: 20px;
+  padding: 20px 0;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  @media  (min-width: 1024px) {
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .card-8--title {
   font-size: 32px;
+  padding: 20px;
+  text-align: center;
+  @media  (min-width: 1024px) {
+    padding: 20px;
+    text-align: left;
+  }
 }
