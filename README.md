@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/beckycode/bento-grid-main)
-- Live Site URL: [Website](https://your-live-site-url.com)
+- Live Site URL: [Website]([https://your-live-site-url.com](https://beckycode.github.io/bento-grid-main/))
 
 ## My process
 
